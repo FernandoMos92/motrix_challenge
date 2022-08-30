@@ -25,13 +25,4 @@ export const HeaderStyled = styled.header`
     }
   }
 
-  @media screen and (max-width: 425px) {
-    img {
-      width: 80px;
-    }
-
-    h3 {
-      font-size: 16px;
-    }
-  }
 `

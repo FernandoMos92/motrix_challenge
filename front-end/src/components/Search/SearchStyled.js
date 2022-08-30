@@ -8,8 +8,9 @@ const SearchStyled = styled.div`
       height: 40px;
       border: none;
       border-bottom: 1px solid black;
+      font-size: 20px;
       padding: 5px;
-      width: 350px;
+      width: 450px;
       outline-color: #ffb800;
       user-select: none;
 

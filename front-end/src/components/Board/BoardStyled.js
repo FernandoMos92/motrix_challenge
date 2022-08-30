@@ -9,12 +9,6 @@ const BoardStyled = styled.section`
   margin-left: 110px;
   padding: 15px;
   height: 87vh;
-
-  @media screen and (max-width: 1024px) {
-    section {
-      width: 80%;
-    }
-  }
 `
 
 export default BoardStyled

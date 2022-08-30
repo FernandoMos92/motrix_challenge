@@ -3,11 +3,11 @@ import styled from 'styled-components'
 const CardStyled = styled.div`
   display: flex;
   flex-flow: row wrap;
+  height: 78vh;
   justify-content: flex-start;
   margin-top: 10px;
-  height: 78vh;
-  padding: 10px;
   overflow-y: scroll;
+  padding: 10px;
   scroll-behavior: smooth;
 
   ::-webkit-scrollbar {
@@ -21,31 +21,38 @@ const CardStyled = styled.div`
     border-radius: 20px;
   }
 
-  .card___content {
-    box-shadow: 0px 0px 6px darkgray;
+  .cardStyle___content {
     border-radius: 6px;
-    height: 30%;
-    width: 20%;
-    margin-bottom: 40px;
-    margin-right: 80px;
-    overflow-y: scroll;
-    padding: 5px;
+    box-shadow: 0 0 6px darkgray;
     cursor: pointer;
+    height: 40%;
+    margin: 20px 80px 40px 0;
+    padding: 5px;
     transition: all 0.1s ease-in-out;
-    ::-webkit-scrollbar {
-      width: 1px;
-    }
+    width: 20%;
 
-    h2 {
+    .cardStyle___content-title {
       text-align: center;
       text-transform: uppercase;
       margin-bottom: 10px;
     }
 
-    span {
+    .cardStyle___content-body {
       display: block;
-      height: 100%;
-      padding: 10px;
+      height: 85%;
+      overflow-y: scroll;
+      padding: 15px;
+
+      ::-webkit-scrollbar {
+        background-color: #141a29;
+        height: 2px;
+        width: 3px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #ffb800;
+        border-radius: 20px;
+      }
     }
 
     &:hover {
