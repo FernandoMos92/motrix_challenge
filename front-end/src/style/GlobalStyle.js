@@ -15,4 +15,8 @@ export const GlobalStyle = createGlobalStyle`
   height: 100vh;
   width: 100%;
  }
+
+ body {
+  position: relative;
+ }
 `
