@@ -1,15 +1,12 @@
 import React from 'react'
 import Card from '../Card'
+import Search from '../Search'
 import BoardStyled from './BoardStyled'
 
 export default function Board() {
   return (
     <BoardStyled>
-      <div className='card__search'>
-        <input type='text' placeholder='Search your content' />
-        <button>
-        </button>
-      </div>
+      <Search />
       <Card />
     </BoardStyled>
   )

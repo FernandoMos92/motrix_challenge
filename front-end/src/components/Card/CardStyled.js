@@ -1,25 +1,33 @@
 import styled from 'styled-components'
 
 const CardStyled = styled.div`
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    margin-top: 10px;
-    height: 78vh;
-    padding: 10px;
-    overflow-y: scroll;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin-top: 10px;
+  height: 78vh;
+  padding: 10px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 
-    ::-webkit-scrollbar {
-      width: 1px;
-    }
+  ::-webkit-scrollbar {
+    background-color: #141a29;
+    width: 3px;
+    height: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #ffb800;
+    border-radius: 20px;
+  }
 
   .card___content {
-    box-shadow: 0px 0px 6px #f2f2f2;
+    box-shadow: 0px 0px 6px darkgray;
     border-radius: 6px;
     height: 30%;
-    width: 30%;
-    margin-bottom: 15px;
-    margin-right: 30px;
+    width: 20%;
+    margin-bottom: 40px;
+    margin-right: 80px;
     overflow-y: scroll;
     padding: 5px;
     cursor: pointer;

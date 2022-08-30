@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 const MainStyled = styled.main`
-  margin-top: 90px;
+  background-color: #F2F2F2;
   height: 90vh;
-  padding: 10px;
+  margin-top: 5.62rem;
+  padding: .62rem;
 `
 
 export default MainStyled;

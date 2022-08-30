@@ -10,8 +10,8 @@ export const GlobalStyle = createGlobalStyle`
  }
 
  html {
-  background-color: #141a29;
-  color: #F2F2F2;
+  background-color: #FFFFFF;
+  color: #141a29;
   height: 100vh;
   width: 100%;
  }
