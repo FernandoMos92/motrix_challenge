@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-export const HeaderStyled = styled.header`
+const StyleHeader = styled.header`
   background-color: #141a29;
-  color: #FFFFFF;
+  color: #ffffff;
   align-items: center;
   display: flex;
   height: 10vh;
@@ -24,5 +24,6 @@ export const HeaderStyled = styled.header`
       color: #ffb800;
     }
   }
-
 `
+
+export default StyleHeader

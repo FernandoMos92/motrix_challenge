@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const CardStyled = styled.div`
+const StyleCard = styled.div`
   display: flex;
   flex-flow: row wrap;
   height: 78vh;
@@ -63,4 +63,4 @@ const CardStyled = styled.div`
   }
 `
 
-export default CardStyled
+export default StyleCard

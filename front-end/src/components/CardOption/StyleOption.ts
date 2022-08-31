@@ -1,10 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
-import { BsPlusLg } from 'react-icons/bs'
-import { TiDeleteOutline } from 'react-icons/ti'
-import { FiEdit3 } from 'react-icons/fi'
 
-const Option = styled.div`
+const StyleOption = styled.div`
   background-color: #141a29;
   border-top: 1px solid #f2f2f2;
   border-right: 1px solid #f2f2f2;
@@ -48,18 +44,4 @@ const Option = styled.div`
   }
 `
 
-export default function CardOption() {
-  return (
-    <Option>
-      <abbr title="Create new content">
-        <BsPlusLg className='icon-options' />
-      </abbr>
-      <abbr title="Edit content">
-        <FiEdit3 className='icon-options' />
-      </abbr>
-      <abbr title="Delete Content">
-        <TiDeleteOutline className='icon-options' />
-      </abbr>
-    </Option>
-  )
-}
+export default StyleOption

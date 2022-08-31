@@ -1,13 +1,13 @@
 import React from 'react'
 import Card from '../Card'
 import Search from '../Search'
-import BoardStyled from './BoardStyled'
+import StyleBoard from './StyleBoard'
 
-export default function Board() {
+export default function Board () {
   return (
-    <BoardStyled>
+    <StyleBoard>
       <Search />
       <Card />
-    </BoardStyled>
+    </StyleBoard>
   )
 }

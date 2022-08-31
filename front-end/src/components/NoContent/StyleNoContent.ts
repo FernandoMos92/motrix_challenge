@@ -1,8 +1,6 @@
-import React from 'react'
-import { BsPlusLg } from 'react-icons/bs'
 import styled from 'styled-components'
 
-const NoContentStyled = styled.div`
+const StyleNoContent = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
@@ -40,15 +38,4 @@ const NoContentStyled = styled.div`
   }
 `
 
-export default function NoContent() {
-  return (
-    <NoContentStyled>
-      <div>
-        <h2>Don't contain any content</h2>
-        <button>
-          <BsPlusLg />
-        </button>
-      </div>
-    </NoContentStyled>
-  )
-}
+export default StyleNoContent

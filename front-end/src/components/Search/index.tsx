@@ -1,11 +1,11 @@
 import React from 'react'
-import SearchStyled from './SearchStyled'
+import StyleSearch from './StyleSearch'
 
-export default function Search() {
+export default function Search () {
   return (
-    <SearchStyled>
+    <StyleSearch>
       <input type='text' placeholder='Search your content' />
       <button>Search</button>
-    </SearchStyled>
+    </StyleSearch>
   )
 }

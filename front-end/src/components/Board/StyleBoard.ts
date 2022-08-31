@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const BoardStyled = styled.section`
+const StyleBoard = styled.section`
   background-color: #ffffff;
   border-radius: 8px;
   color: #141a29;
@@ -11,4 +11,4 @@ const BoardStyled = styled.section`
   height: 87vh;
 `
 
-export default BoardStyled
+export default StyleBoard

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const SearchStyled = styled.div`
+const StyleSearch = styled.div`
     display: flex;
     justify-content: center;
 
@@ -38,4 +38,4 @@ const SearchStyled = styled.div`
     }
 `
 
-export default SearchStyled;
+export default StyleSearch
