@@ -3,7 +3,7 @@ import { AppDataSource } from '@/ports/typeorm';
 
 AppDataSource.initialize()
   .then(() => {
-    app.listen(3000, () => {
+    app.listen(3002 || process.env.PORT, () => {
       console.log('Server is running on port 3000');
     });
   })

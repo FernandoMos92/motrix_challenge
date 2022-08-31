@@ -1,3 +1,1 @@
-import { Input } from './useCase';
-
-export type DestroyContentRepository = (input: Input) => void;
+export type DestroyContentRepository = (id: number) => void;

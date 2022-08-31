@@ -4,7 +4,7 @@ import {
   createContentUseCase,
   Input,
 } from '@/useCases/createContent';
-import { makeContent } from './factories';
+import { makeContent } from '../factories';
 
 describe('createContentUseCase', () => {
   let createContentRepository: CreateContentRepository;

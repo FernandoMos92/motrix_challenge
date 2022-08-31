@@ -2,7 +2,7 @@ import {
   ListContentsRepository,
   listContentsUseCase,
 } from '@/useCases/listContents';
-import { makeContent } from '../createContent/factories';
+import { makeContent } from '../factories';
 
 describe('listContentsUseCase', () => {
   let listContentsRepository: ListContentsRepository;
