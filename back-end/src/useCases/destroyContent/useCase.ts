@@ -9,7 +9,7 @@ export type Params = {
 };
 
 export type Output = Promise<void>;
-
+export type useCase = (params: Params) => Output;
 
 export const destroyContentUseCase = async ({ id, destroyContentRepository, getContentByIdRepository }: Params): Output => {
   const content = await getContentByIdRepository(id);
@@ -17,5 +17,5 @@ export const destroyContentUseCase = async ({ id, destroyContentRepository, getC
     throw new ContentNotFoundError(id);
   }
   
-  await destroyContentRepository(id)
+  await destroyContentRepository(content)
 }

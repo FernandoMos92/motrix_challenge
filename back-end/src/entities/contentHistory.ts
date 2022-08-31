@@ -1,5 +1,6 @@
 export type ContentHistory = {
   id: number;
-  body: string;
+  title: string;
+  body?: string;
   createdAt: Date;
 };

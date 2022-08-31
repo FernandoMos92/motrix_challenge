@@ -1,39 +1,52 @@
-import { setupCreateContentController } from '@/adapters';
-import { setupListContentsController } from '@/adapters/listContentsController';
-import { typeormCreateContentRepository as createContentRepository } from '@/adapters/typeormCreateContentRepository';
-import { typeormListContentsRepository as listContentsRepository } from '@/adapters/typeormListContentsRepository';
-import { createContentUseCase } from '@/useCases/createContent';
-import { listContentsUseCase } from '@/useCases/listContents';
+import {
+  setupCreateContentController,
+  setupDestroyContentController,
+  setupListContentsController,
+  setupUpdateContentController,
+} from '@/adapters'
+import { typeormCreateContentRepository as createContentRepository } from '@/adapters'
+import { typeormListContentsRepository as listContentsRepository } from '@/adapters'
+import { typeormDestroyContentRepository as destroyContentRepository } from '@/adapters'
+import { typeormGetContentByIdRepository as getContentByIdRepository } from '@/adapters'
+import { typeormUpdateContentRepository as updateContentRepository } from '@/adapters'
+import { typeormAddContentHistoryRepository as addContentHistoryRepository } from '@/adapters/repositores/typeormAddContentHistoryRepository'
+import { updateContentUseCase } from '@/useCases/updateContent'
+import { createContentUseCase } from '@/useCases/createContent'
+import { listContentsUseCase } from '@/useCases/listContents'
+import { destroyContentUseCase } from '@/useCases/destroyContent'
 
-// TODO: fix anys
-const adaptExpressRoute = (controller: any) => async (req: any, res: any) => {
-  const data = await controller({
-    ...req.body,
-    ...req.locals,
-  });
-  res.status(200).json(data);
-};
-
-// TODO: fix any
 const setupRoutes = (app: any) => {
   app.post(
     '/content',
-    adaptExpressRoute(
-      setupCreateContentController({
-        createContentUseCase,
-        createContentRepository,
-      })
-    )
-  );
+    setupCreateContentController({
+      createContentUseCase,
+      createContentRepository,
+    })
+  )
   app.get(
     '/content',
-    adaptExpressRoute(
-      setupListContentsController({
-        listContentsUseCase,
-        listContentsRepository,
-      })
-    )
-  );
-};
+    setupListContentsController({
+      listContentsUseCase,
+      listContentsRepository,
+    })
+  )
+  app.delete(
+    '/content/:id',
+    setupDestroyContentController({
+      destroyContentUseCase,
+      destroyContentRepository,
+      getContentByIdRepository,
+    })
+  )
+  app.put(
+    '/content/:id',
+    setupUpdateContentController({
+      updateContentUseCase,
+      updateContentRepository,
+      getContentByIdRepository,
+      addContentHistoryRepository,
+    })
+  )
+}
 
-export default setupRoutes;
+export default setupRoutes

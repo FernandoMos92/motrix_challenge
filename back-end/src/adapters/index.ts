@@ -1,1 +1,2 @@
-export * from './createContentController';
+export * from './controllers';
+export * from './repositores';
