@@ -8,8 +8,8 @@ export class Content {
   @Column()
   title!: string;
 
-  @Column()
-  body!: string;
+  @Column({nullable:true})
+  body?: string;
 
   @CreateDateColumn()
   createdAt!: Date;

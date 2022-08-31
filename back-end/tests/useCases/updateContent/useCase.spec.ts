@@ -2,6 +2,7 @@ import {
   UpdateContentRepository,
   updateContentUseCase,
   GetContentByIdRepository,
+  AddContentHistoryRepository,
 } from '@/useCases/updateContent';
 import { makeContent } from '../factories';
 import { ContentNotFoundError } from '@/useCases/errors';
@@ -9,11 +10,13 @@ import { ContentNotFoundError } from '@/useCases/errors';
 describe('updateContentUseCase', () => {
   let updateContentRepository: UpdateContentRepository;
   let getContentByIdRepository: GetContentByIdRepository;
+  let addContentHistoryRepository: AddContentHistoryRepository
   let sut: typeof updateContentUseCase;
 
   beforeEach(() => {
     updateContentRepository = jest.fn();
     getContentByIdRepository = jest.fn();
+    addContentHistoryRepository = jest.fn();
     sut = updateContentUseCase;
   });
 
@@ -26,6 +29,7 @@ describe('updateContentUseCase', () => {
         input,
         updateContentRepository,
         getContentByIdRepository,
+        addContentHistoryRepository,
       })
     ).rejects.toThrow(ContentNotFoundError);
   });
@@ -40,6 +44,7 @@ describe('updateContentUseCase', () => {
         input,
         updateContentRepository,
         getContentByIdRepository,
+        addContentHistoryRepository,
       })).toStrictEqual(input)
     expect(getContentByIdRepository).toHaveBeenCalledWith(input.id)
     expect(updateContentRepository).toHaveBeenCalledWith(input)
