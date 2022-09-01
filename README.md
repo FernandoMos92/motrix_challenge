@@ -1,5 +1,4 @@
 # Motrix Challenge
-
 # 📝 Description
 
 This content manager is a project for the technical challenge for a vacancy at Motrix.
@@ -89,7 +88,7 @@ Update date: hidden, timestamp, auto-populated on last modification;
 - [x] The modification history must display, in chronological order by the date of update, all versions of a specific content, enabling navigation between the different versions;
 - [x] When viewing or listing the contents, the user must have access to the most up-to-date version of each content.
 
-##Bonus
+## Bonus
 
 - [x] The front-end must be developed in React, with or without a framework;
 - [x] The back-end must be developed in Node.js, with or without a framework;
