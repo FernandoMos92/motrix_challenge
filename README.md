@@ -13,7 +13,7 @@ So far it has four endpoints, one to fetch <strong>(GET)</strong> all content in
 - Delete a content;
 
 # 🧰 Installation
-
+:construction: <STRONG>IN CONSTRUCTION</STRONG> :construction:
 ## Prerequisites
 
 - Linux
