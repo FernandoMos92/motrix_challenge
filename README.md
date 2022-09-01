@@ -1,4 +1,4 @@
-# motrix_challenge
+# Motrix Challenge
 
 # 📝 Description
 
@@ -60,7 +60,7 @@ Linting codebase
 yarn lint
 ```
 # 📖 Documentation
-[Doc API](https://documenter.getpostman.com/view/20873741/VUxPt6mD)
+[Documentation API](https://documenter.getpostman.com/view/20873741/VUxPt6mD)
 # 📦 Building
 
 Before building application to production, make sure environment variables are
@@ -75,19 +75,27 @@ yarn build
 Running on production
 
 ```bash
-yarn start:prod
+yarn start
 ```
 
 # ✅ TODO
 
-[ ] Add code of conduct file  
-[ ] Add docker section to make project working through docker  
-[ ] Add project files structure  
-[ ] Add issue template file  
-[ ] Add typeorm-seeding within seeds  
-[ ] Check if env variables are loading correctly using  
-[schema-validation](https://docs.nestjs.com/techniques/configuration#schema-validation)  
-[ ] Track errors in production. Use [sentry.io](https://sentry.io) or similar
+- [x] Each content must contain the following data:
+Title: short text, mandatory, without formatting;
+Body: long text, optional, with formatting (wysiwyg);
+Creation date: hidden, timestamp, auto-populated at creation time;
+Update date: hidden, timestamp, auto-populated on last modification;
+- [x]  Every modification saved in the content must be registered as a new revision, never overwriting or erasing previous versions;
+- [x] The modification history must display, in chronological order by the date of update, all versions of a specific content, enabling navigation between the different versions;
+- [x] When viewing or listing the contents, the user must have access to the most up-to-date version of each content.
+
+##Bonus
+
+- [x] The front-end must be developed in React, with or without a framework;
+- [x] The back-end must be developed in Node.js, with or without a framework;
+- [x] The communication between the application and the data layer must be through a REST API;
+- [x] All form fields must have proper validations;
+
 
 # 💻 Code style
 
