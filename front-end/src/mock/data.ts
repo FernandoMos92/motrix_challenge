@@ -13,7 +13,7 @@ export type Data = {
 function generateData(): Data[] {
 const data = []
 
-for (let index = 0; index < 30; index += 1) {
+for (let index = 0; index < 0; index += 1) {
   data.push({
     id: Math.floor(Math.random() * (100 - 1) + 1),
     title: faker.word.adjective(),
