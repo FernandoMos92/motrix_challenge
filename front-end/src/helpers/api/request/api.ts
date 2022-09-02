@@ -13,8 +13,14 @@ async function deleteContent(id: string | number) {
   return listContent()
 }
 
+async function updateContent(id: string | number, title:string, body:string) {
+  await requestApi.put(`content/${id}`, { title, body })
+  return listContent()
+}
+
 export {
   createContent,
   listContent,
-  deleteContent
+  deleteContent,
+  updateContent
 };

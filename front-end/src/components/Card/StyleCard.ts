@@ -37,12 +37,6 @@ const StyleCard = styled.div`
     
   }
 
-  .card__edit-icon {
-    margin-left: 20px;
-    font-size: 16px;
-    color: #ffb800;
-  }
-
   .card___content-title {
     text-align: center;
     text-transform: uppercase;
@@ -74,9 +68,9 @@ const StyleCard = styled.div`
     height: 40px;
     padding: 3px;
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
+    bottom: 5%;
+    width: 80%;
+    left: 10%;
 
     button {
       cursor: pointer;

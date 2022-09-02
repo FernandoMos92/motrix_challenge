@@ -1,94 +1,92 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react'
+import { FiEdit3 } from 'react-icons/fi'
 import { GrFormClose } from 'react-icons/gr'
-import UserContentContext from '../../context/UserContext';
-import styled from 'styled-components'
-
-const Details = styled.div`
-  border: 2px solid black;
-  background-color: #141a29;
-  border-radius: 6px;
-  color: #ffb800;
-  padding: 20px;
-  height: 650px;
-  width: 900px;
-  position: fixed;
-  top: 25%;
-  left: 30%;
-  z-index: 99;
-
-  .details__icon-close {
-    position: absolute;
-    background-color: #ffb800;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    top: 2%;
-    right: 2%;
-    cursor: pointer;
-    transition: all .1s ease-in-out;
-
-    &:active {
-      transform: scale(.9);
-    }
-  }
-
-  .details__container-content {
-    height: 90%;
-    padding: 10px;
-    margin-top: 35px;
-    user-select: none;
-
-    h1 {
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 48px;
-    }
-
-    .details__body {
-      height: 80%;
-      padding: 10px;
-      overflow-y: scroll;
-      ::-webkit-scrollbar {
-        width: 1px;
-      }
-    }
-
-    .details__date {
-      width:40%;
-      height: fit-content;
-      p {
-        margin-bottom: 15px;
-      }
-    }
-  }
-`
+import UserContentContext from '../../context/UserContext'
+import { updateContent } from '../../helpers/api/request/api'
+import Details from './Details'
 
 function DetailCard() {
-  const { filteredContent, setIsOpenModalDetail } = useContext(UserContentContext);
+  const [isEdit, setIsEdit] = useState(false)
+  const { filteredContent, setIsOpenModalDetail, content, setContent } =
+    useContext(UserContentContext)
 
+  const handleChange = ({ target }: any) => {
+    const { name, value } = target;
+    setContent({ ...content, [name]: value })
+  };
+
+  const handleSaveContent = (id:number | string, title:string, body:string) => {
+    updateContent(id, title, body)
+    window.location.reload()
+    setIsEdit(false)
+  }
+  
+  
+  const { title, body } = content;
   return (
     <Details>
-      <GrFormClose className='details__icon-close' onClick={() => setIsOpenModalDetail(false)} />
-      {
-        filteredContent.map((content) => (
-          <div className='details__container-content'>
+      <GrFormClose
+        className='details__icon-close'
+        onClick={() => setIsOpenModalDetail(false)}
+      />
+      {filteredContent.map(content => (
+        <div className='details__container-content'>
+          {isEdit ? (
+            <input
+              type='text'
+              name="title"
+              value={title}
+              placeholder={content.title}
+              onChange={handleChange}
+              className="details__input-edit default__edit"
+            />
+          ) : (
             <h1>
               {content.title}
+              {!isEdit && (
+                <abbr title='Edit content'>
+                  <FiEdit3
+                    className='card__edit-icon'
+                    onClick={() => setIsEdit(!isEdit)}
+                  />
+                </abbr>
+              )}
             </h1>
-            <div className='details__body'>
-              {content.body}
-            </div>
-            <div className='details__date'>
-              <label htmlFor="">Created content in:</label>
-              <p>{content.createdAt.toString() }</p>
-                <label htmlFor="">Last update content at:</label>
-              <p>{ content.updatedAt.toString() }</p>
-            </div>
+          )}
+          {isEdit ? (
+            <textarea
+              value={body}
+              name="body"
+              id='body'
+              cols={20}
+              rows={20}
+              placeholder={content.body}
+              onChange={handleChange}
+              className="details__text-edit default__edit"
+            ></textarea>
+            
+          ) : (
+            <div className='details__body'>{content.body}</div>
+          )}
+          <div className='details__date'>
+            <label htmlFor=''>Created content in:</label>
+            <p>{content.createdAt.toString()}</p>
+            <label htmlFor=''>Last update content at:</label>
+            <p>{content.updatedAt.toString()}</p>
           </div>
-        ))
-      }
+          {isEdit && <div className='details__container-buttons'>
+            <button onClick={() => setIsEdit(false)}>Cancel</button>
+            <button
+              onClick={() => handleSaveContent(content.id, title, body.length === 0 ? content.body : body)}
+              disabled={title.length <= 3}
+            >
+              Save
+            </button>
+          </div>}
+        </div>
+      ))}
     </Details>
   )
 }
 
-export default DetailCard;
+export default DetailCard

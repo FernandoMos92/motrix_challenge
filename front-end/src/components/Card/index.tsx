@@ -38,9 +38,6 @@ export default function Card() {
           <div className='card__content' key={data.id}>
             <h2 id={data.id.toString()} className='card___content-title'>
               {data.title}
-              <abbr title='Edit content'>
-                <FiEdit3 className='card__edit-icon' />
-              </abbr>
             </h2>
             <div id={data.id.toString()} className='card___content-body'>
               {data.body}
