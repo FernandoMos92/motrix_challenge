@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { UserContentProvider } from './context/UserContext';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './style/GlobalStyle';
 
@@ -10,7 +11,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <UserContentProvider>
+      <App />
+    </UserContentProvider>
   </React.StrictMode>
 );
 

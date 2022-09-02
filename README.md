@@ -79,17 +79,17 @@ yarn start
 
 # ✅ TODO
 
+- [ ] Deploy
+
+## Done
 - [x] Each content must contain the following data:
-Title: short text, mandatory, without formatting;
-Body: long text, optional, with formatting (wysiwyg);
-Creation date: hidden, timestamp, auto-populated at creation time;
-Update date: hidden, timestamp, auto-populated on last modification;
+      Title: short text, mandatory, without formatting;
+      Body: long text, optional, with formatting (wysiwyg);
+      Creation date: hidden, timestamp, auto-populated at creation time;
+      Update date: hidden, timestamp, auto-populated on last modification;
 - [x]  Every modification saved in the content must be registered as a new revision, never overwriting or erasing previous versions;
 - [x] The modification history must display, in chronological order by the date of update, all versions of a specific content, enabling navigation between the different versions;
 - [x] When viewing or listing the contents, the user must have access to the most up-to-date version of each content.
-
-## Bonus
-
 - [x] The front-end must be developed in React, with or without a framework;
 - [x] The back-end must be developed in Node.js, with or without a framework;
 - [x] The communication between the application and the data layer must be through a REST API;

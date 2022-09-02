@@ -1,9 +1,8 @@
-import React from 'react'
 import Card from '../Card'
 import Search from '../Search'
 import StyleBoard from './StyleBoard'
 
-export default function Board () {
+function Board() {
   return (
     <StyleBoard>
       <Search />
@@ -11,3 +10,5 @@ export default function Board () {
     </StyleBoard>
   )
 }
+
+export default Board;
