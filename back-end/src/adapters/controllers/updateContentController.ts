@@ -1,4 +1,3 @@
-import { Content } from '@/entities/content';
 import { ContentNotFoundError } from '@/useCases/errors';
 import {
   AddContentHistoryRepository,

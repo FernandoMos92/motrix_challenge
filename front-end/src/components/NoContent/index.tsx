@@ -3,10 +3,8 @@ import { BsPlusLg } from 'react-icons/bs'
 import StyleNoContent from './StyleNoContent'
 import UserContentContext from '../../context/UserContext'
 import changeState from '../../utils/changeState'
-import CreateContentModal from '../CreateContentModal'
 
-
-export default function NoContent() {
+function NoContent() {
   const { isModal, setIsModal } = useContext(UserContentContext)
   return (
     <StyleNoContent>
@@ -15,10 +13,9 @@ export default function NoContent() {
         <button onClick={() => changeState(isModal, setIsModal)}>
           <BsPlusLg />
         </button>
-        {
-          isModal && <CreateContentModal />
-        }
       </div>
     </StyleNoContent>
   )
 }
+
+export default NoContent;

@@ -33,13 +33,13 @@ const StyleOption = styled.div`
     .icon-options {
       color: #ffb800;;
       font-size: 24px;
-      transition: all 0.2s ease-in-out;
+      transition: all 0.4s ease-in-out;
       cursor: pointer;
     }
 
     &:hover {
       background-color: #f2f2f2;
-      transform: scale(1.1);
+      transform: scale(.8);
     }
   }
 `

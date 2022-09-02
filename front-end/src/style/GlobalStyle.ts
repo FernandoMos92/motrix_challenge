@@ -19,4 +19,5 @@ export const GlobalStyle = createGlobalStyle`
  body {
   position: relative;
  }
+ 
 `

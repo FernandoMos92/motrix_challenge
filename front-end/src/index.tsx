@@ -4,6 +4,8 @@ import App from './App';
 import { UserContentProvider } from './context/UserContext';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './style/GlobalStyle';
+import { QueryClientProvider } from '@tanstack/react-query'
+import { queryClient } from './helpers/queryClient';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,9 +13,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <UserContentProvider>
-      <App />
-    </UserContentProvider>
+      <QueryClientProvider client={queryClient}>
+        <UserContentProvider>
+          <App />
+        </UserContentProvider>
+      </QueryClientProvider>
   </React.StrictMode>
 );
 
