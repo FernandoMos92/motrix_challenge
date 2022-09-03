@@ -5,15 +5,15 @@ import StyleSearch from './StyleSearch'
 export default function Search () {
   const [search, setSearch] = useState("")
 
-  const { listOfContent } = useContext(UserContentContext)
+  const { listOfContent, setSearchContent } = useContext(UserContentContext)
 
-  const filteredElements = listOfContent.filter((content) => content.title.includes(search))
-  console.log('🚀 -> filteredElements', filteredElements);
+  const contentSearch = () => {
+    const  findContent = listOfContent.filter((content) => content.title.includes(search) || content.body.includes(search))
+    setSearchContent(findContent)
+  }
 
   const handleChange = ({ target }: any) => {
-    const { name, value } = target;
     setSearch(target.value)
-    console.log({ [name]: value})
   };
 
 
@@ -26,7 +26,7 @@ export default function Search () {
         placeholder='Search your content'
         onChange={ (evt) => handleChange(evt) }
       />
-      <button>Search</button>
+      <button onClick={() => contentSearch() }>Search</button>
     </StyleSearch>
   )
 }

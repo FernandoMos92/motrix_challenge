@@ -39,6 +39,8 @@ type DataTypes = {
   setListOfContent: (newState: string | any) => void;
   filteredContent: FilteredContent[] ;
   setFilteredContent: (newState: string | any) => void;
+  searchContent: FilteredContent[] ;
+  setSearchContent: (newState: string | any) => void;
 }
 
 const initialValue = {
@@ -55,6 +57,8 @@ const initialValue = {
   setListOfContent: () => { },
   filteredContent: [],
   setFilteredContent: () => { },
+  searchContent: [],
+  setSearchContent: () => { },
 }
 
 const UserContentContext = createContext<DataTypes>(initialValue)
@@ -64,6 +68,7 @@ export function UserContentProvider({ children }:UserContextProps) {
   const [isOpenModalDetail, setIsOpenModalDetail] = useState<boolean>(false);
   const [listOfContent, setListOfContent] = useState<ContentReponse[]>([])
   const [filteredContent, setFilteredContent] = useState<FilteredContent[]>([])
+  const [searchContent, setSearchContent] = useState<FilteredContent[]>([])
   const [content, setContent] = useState<ContentInput>({
     title: "",
     body: ""
@@ -81,7 +86,9 @@ export function UserContentProvider({ children }:UserContextProps) {
     listOfContent,
     setListOfContent,
     filteredContent,
-    setFilteredContent
+    setFilteredContent,
+    searchContent,
+    setSearchContent
   }
   
   return (

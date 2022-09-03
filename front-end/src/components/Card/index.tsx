@@ -3,7 +3,6 @@ import NoContent from '../NoContent'
 import StyleCard from './StyleCard'
 import UserContentContext from '../../context/UserContext'
 import DetailCard from '../DetailCard'
-import { FiEdit3 } from 'react-icons/fi'
 import { deleteContent } from '../../helpers/api/request/api'
 
 export default function Card() {
@@ -12,7 +11,8 @@ export default function Card() {
     setFilteredContent,
     setIsOpenModalDetail,
     isOpenModalDetail,
-    setListOfContent
+    setListOfContent,
+    searchContent
   } = useContext(UserContentContext)
 
   const isOpenDetails = (event: any) => {
@@ -31,10 +31,17 @@ export default function Card() {
     setListOfContent(data)
   }
 
+  const checkedContent = () => {
+    if (searchContent.length > 0) {
+      return searchContent
+    }
+    return listOfContent;
+  }
+
   return (
     <StyleCard className='card__board'>
-      {listOfContent.length > 0 ? (
-        listOfContent.map((data) => (
+      {checkedContent().length > 0 ? (
+        checkedContent().map((data) => (
           <div className='card__content' key={data.id}>
             <h2 id={data.id.toString()} className='card___content-title'>
               {data.title}
@@ -50,7 +57,6 @@ export default function Card() {
                 Delete
               </button>
               <button
-                id={data.id.toString()}
                 className='card__button-detail'
                 onClick={evt => isOpenDetails(evt)}>
                 Details
