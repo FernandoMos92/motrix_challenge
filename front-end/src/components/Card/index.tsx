@@ -17,9 +17,9 @@ export default function Card() {
 
   const isOpenDetails = (event: any) => {
     event?.preventDefault()
-    const { target } = event;
+    const { id } = event.target;
     const findContentOfList = listOfContent.find(
-      content => content.id === +target.id
+      content => content.id === Number(id)
     )
     setFilteredContent([findContentOfList])
     setIsOpenModalDetail(true)
@@ -57,6 +57,7 @@ export default function Card() {
                 Delete
               </button>
               <button
+                id={data.id.toString()}
                 className='card__button-detail'
                 onClick={evt => isOpenDetails(evt)}>
                 Details

@@ -3,13 +3,14 @@ import { FiEdit3 } from 'react-icons/fi'
 import { GrFormClose } from 'react-icons/gr'
 import UserContentContext from '../../context/UserContext'
 import { updateContent } from '../../helpers/api/request/api'
+import ChangeHistory from '../ChangeHistory'
 import Details from './Details'
 
 function DetailCard() {
   const [isEdit, setIsEdit] = useState(false)
-  const { filteredContent, setIsOpenModalDetail, content, setContent } =
-    useContext(UserContentContext)
-
+  const [isHistory, setIsHistory] = useState(false)
+  const { filteredContent, setIsOpenModalDetail, content, setContent } = useContext(UserContentContext)
+   
   const handleChange = ({ target }: any) => {
     const { name, value } = target;
     setContent({ ...content, [name]: value })
@@ -29,10 +30,14 @@ function DetailCard() {
         className='details__icon-close'
         onClick={() => setIsOpenModalDetail(false)}
       />
-      {filteredContent.map(content => (
-        <div className='details__container-content'>
+      {filteredContent.map((content, index) => (
+        <div
+          key={index}
+          className='details__container-content'
+        >
           {isEdit ? (
             <input
+              key={index}
               type='text'
               name="title"
               value={title}
@@ -68,12 +73,21 @@ function DetailCard() {
           ) : (
             <div className='details__body'>{content.body}</div>
           )}
-          <div className='details__date'>
-            <label htmlFor=''>Created content in:</label>
-            <p>{content.createdAt.toString()}</p>
-            <label htmlFor=''>Last update content at:</label>
-            <p>{content.updatedAt.toString()}</p>
+          <div className='details__history'>
+            <div className='details__date'>
+              <label htmlFor=''>Created content in:</label>
+              <p>{content.createdAt.toString()}</p>
+              <label htmlFor=''>Last update content at:</label>
+              <p>{content.updatedAt.toString()}</p>
+            </div>
+            <button
+              id={content.id.toString()}
+              onClick={() => setIsHistory(true)}
+            >History Update</button>
           </div>
+          {
+            isHistory && <ChangeHistory />
+          }
           {isEdit && <div className='details__container-buttons'>
             <button onClick={() => setIsEdit(false)}>Cancel</button>
             <button

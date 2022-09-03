@@ -18,9 +18,15 @@ async function updateContent(id: string | number, title:string, body:string) {
   return listContent()
 }
 
+async function getHistories(id: string) {
+  const history = await requestApi.get(`content/${id}/history`)
+  return history;
+}
+
 export {
   createContent,
   listContent,
   deleteContent,
-  updateContent
+  updateContent,
+  getHistories
 };

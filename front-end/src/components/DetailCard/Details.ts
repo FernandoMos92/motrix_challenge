@@ -29,6 +29,35 @@ const Details = styled.div`
     }
   }
 
+  .details__history {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 94%;
+    margin: 0 auto;
+    margin-left: 10px;
+    position: relative;
+
+    button {
+      background-color: #ffb800;
+      border: 1px solid #ffb800;
+      cursor: pointer;
+      color: #141a29;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 18px;
+      width: 140px;
+      height: 30px;
+      transition: all .1s ease-in-out;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      &:active {
+        transform: scale(.9);
+      }
+    }
+  }
+  
   .details__container-content {
     height: 90%;
     padding: 10px;

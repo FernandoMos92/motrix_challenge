@@ -51,13 +51,23 @@ form {
     font-size: 22px;
     margin: 0 auto;
     margin-top: 10px;
-    outline-color: #ffb800;
     padding: 10px;
     width: 70%;
+    ::-webkit-scrollbar {
+      background-color: #141a29;
+      width: 3px;
+      height: 2px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #ffb800;
+      border-radius: 20px;
+    }
      &::placeholder{
       font-size: 22px;
       text-transform: none;
     }
+
   }
 }
 .formContainer__container-button {

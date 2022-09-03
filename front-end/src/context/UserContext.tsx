@@ -41,6 +41,8 @@ type DataTypes = {
   setFilteredContent: (newState: string | any) => void;
   searchContent: FilteredContent[] ;
   setSearchContent: (newState: string | any) => void;
+  history: FilteredContent[] ;
+  setHistory: (newState: string | any) => void;
 }
 
 const initialValue = {
@@ -59,6 +61,8 @@ const initialValue = {
   setFilteredContent: () => { },
   searchContent: [],
   setSearchContent: () => { },
+  history: [],
+  setHistory: () => { },
 }
 
 const UserContentContext = createContext<DataTypes>(initialValue)
@@ -69,13 +73,18 @@ export function UserContentProvider({ children }:UserContextProps) {
   const [listOfContent, setListOfContent] = useState<ContentReponse[]>([])
   const [filteredContent, setFilteredContent] = useState<FilteredContent[]>([])
   const [searchContent, setSearchContent] = useState<FilteredContent[]>([])
+  const [history, setHistory] = useState<FilteredContent[]>([])
   const [content, setContent] = useState<ContentInput>({
     title: "",
     body: ""
   });
   
-  useQuery(['contents'], listContent, { onSuccess: (res) => { setListOfContent(res.data) } })
-  
+  useQuery(['contents'], listContent, {
+    onSuccess: (res) => {
+      setListOfContent(res.data)
+    }
+  })
+
   const myContent = {
     isModal,
     setIsModal,
@@ -88,7 +97,9 @@ export function UserContentProvider({ children }:UserContextProps) {
     filteredContent,
     setFilteredContent,
     searchContent,
-    setSearchContent
+    setSearchContent,
+    history,
+    setHistory
   }
   
   return (
