@@ -34,6 +34,7 @@ const StyleCard = styled.div`
     padding: 10px;
     user-select: none;
     position: relative;
+
     
   }
 
@@ -44,7 +45,10 @@ const StyleCard = styled.div`
   }
 
   .card___content-body {
-    height: 300px;
+    height: 280px;
+    width: 400px;
+    padding: 5px;
+    margin: 0 auto;
     overflow-y: scroll;
   
       ::-webkit-scrollbar {

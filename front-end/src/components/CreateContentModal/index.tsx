@@ -19,6 +19,14 @@ function CreateContentModal() {
     createContent(title, body)
   }
 
+  const clearInputs = (evt: any) => {
+    evt.preventDefault()
+    setContent({
+      title: '',
+      body: ''
+    })
+  }
+
     return (
       <FormContainer>
       <IoMdClose
@@ -46,7 +54,7 @@ function CreateContentModal() {
       <div className='formContainer__container-button'>
           <button
             className='formContainer__button'
-            onClick={(event) => event.preventDefault()}
+            onClick={(evt) => clearInputs(evt)}
           >
             Clear
           </button>

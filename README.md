@@ -11,6 +11,7 @@ So far it has four endpoints, one to fetch <strong>(GET)</strong> all content in
 - Edit a content;
 - Update a content;
 - Delete a content;
+- Search a contet;
 
 # 🧰 Installation
 :construction: <STRONG>IN CONSTRUCTION</STRONG> :construction:
