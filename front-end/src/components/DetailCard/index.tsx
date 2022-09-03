@@ -73,7 +73,7 @@ function DetailCard() {
           ) : (
             <div className='details__body'>{content.body}</div>
           )}
-          <div className='details__history'>
+          <div className='details__history' key={index}>
             <div className='details__date'>
               <label htmlFor=''>Created content in:</label>
               <p>{content.createdAt.toString()}</p>
@@ -86,7 +86,7 @@ function DetailCard() {
             >History Update</button>
           </div>
           {
-            isHistory && <ChangeHistory />
+            isHistory && <ChangeHistory onClick={() => setIsHistory(!isHistory)} id={ content.id} />
           }
           {isEdit && <div className='details__container-buttons'>
             <button onClick={() => setIsEdit(false)}>Cancel</button>

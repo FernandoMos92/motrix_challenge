@@ -5,6 +5,10 @@ This content manager is a project for the technical challenge for a vacancy at M
 It consists of a Back-end using Node.JS with Express and TypeORM, PostgreSQL to database, applying the concept of Clean Architecture and Clean Code.
 So far it has four endpoints, one to fetch <strong>(GET)</strong> all content in the PosgreSQL database, create a new content <strong>(POST)</strong>, update a content <strong>(PUT)</strong> and also delete a content <strong>(DELETE)</strong>.
 
+<p style="align=center">
+  <img src="./assets/Peek 03-09-2022 01-49.gif" />
+</p>
+
 # 🎉 Features
 
 - Create a new content;
@@ -14,7 +18,26 @@ So far it has four endpoints, one to fetch <strong>(GET)</strong> all content in
 - Search a contet;
 
 # 🧰 Installation
-:construction: <STRONG>IN CONSTRUCTION</STRONG> :construction:
+To start the application you must first enter the back-end repository and install the dependencies, the same goes for the front-end.
+I recommend using the yarn package manager
+```bash
+yarn
+```
+or you can use
+```bash
+npm install
+```
+
+After installing the dependencies, you must enter the backend folder and run the following commands in separate terminals
+```bash
+docker-compose up && yarn dev
+```
+
+After the container uploads PostgreSQL and the back-end is running, we must start our front-end with the following command.
+
+```bash
+yarn start
+```
 ## Prerequisites
 
 - Linux
@@ -60,7 +83,7 @@ Linting codebase
 yarn lint
 ```
 # 📖 Documentation
-[Documentation API](https://documenter.getpostman.com/view/20873741/VUxPt6mD)
+[Documentation API](https://documenter.getpostman.com/view/20873741/VUxRR7EA)
 # 📦 Building
 
 Before building application to production, make sure environment variables are
@@ -80,7 +103,9 @@ yarn start
 
 # ✅ TODO
 
-- [ ] Deploy
+- [ ] Deploy;
+- [ ] Apply React Testing Library;
+- [ ] Refactor the CSS code;
 
 ## Done
 - [x] Each content must contain the following data:
